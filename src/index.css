@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,900&family=Bebas+Neue&family=Syncopate:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+
+/* ═══════════════════════════════════════════════════════════════
+   CONCEPT 1 — STREET & UNDERGROUND
+   Bebas Neue + Montserrat Black / neon green / raw brutalist
+═══════════════════════════════════════════════════════════════ */
+.concept-street.mode-dark {
+  --bg:        #080808;
+  --bg2:       #0f0f0f;
+  --card:      #141414;
+  --text:      #f0f0f0;
+  --muted:     #666666;
+  --accent:    #C8FF00;
+  --accent2:   #FF2D78;
+  --accent3:   #BF5AF2;
+  --border:    #222222;
+  --radius:    0px;
+  --font-hero: 'Bebas Neue', sans-serif;
+  --font-head: 'Montserrat', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+  --nav-blur:  rgba(8,8,8,0.92);
+}
+.concept-street.mode-light {
+  --bg:        #E8E4DC;
+  --bg2:       #D8D4CC;
+  --card:      #F0EDE6;
+  --text:      #0A0A0A;
+  --muted:     #666666;
+  --accent:    #1A7A00;
+  --accent2:   #CC003A;
+  --accent3:   #7B2FBE;
+  --border:    #AAAAAA;
+  --radius:    0px;
+  --font-hero: 'Bebas Neue', sans-serif;
+  --font-head: 'Montserrat', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+  --nav-blur:  rgba(232,228,220,0.92);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CONCEPT 2 — EXCLUSIVE & PREMIUM
+   Syncopate / Cormorant Garamond / gold / architectural minimal
+═══════════════════════════════════════════════════════════════ */
+.concept-premium.mode-dark {
+  --bg:        #060606;
+  --bg2:       #0C0C0C;
+  --card:      #111111;
+  --text:      #EDE8DE;
+  --muted:     #5A5550;
+  --accent:    #C5963A;
+  --accent2:   #E8D5A3;
+  --accent3:   #8B7040;
+  --border:    #1E1E1E;
+  --radius:    0px;
+  --font-hero: 'Cormorant Garamond', serif;
+  --font-head: 'Syncopate', sans-serif;
+  --font-body: 'Cormorant Garamond', serif;
+  --nav-blur:  rgba(6,6,6,0.95);
+}
+.concept-premium.mode-light {
+  --bg:        #F2EDE4;
+  --bg2:       #E8E1D6;
+  --card:      #FAF7F2;
+  --text:      #1A1510;
+  --muted:     #7A7060;
+  --accent:    #8B5E1A;
+  --accent2:   #4A3010;
+  --accent3:   #C8A060;
+  --border:    #D0C8B4;
+  --radius:    0px;
+  --font-hero: 'Cormorant Garamond', serif;
+  --font-head: 'Syncopate', sans-serif;
+  --font-body: 'Cormorant Garamond', serif;
+  --nav-blur:  rgba(242,237,228,0.95);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CONCEPT 3 — CLEAN & MODERN
+   DM Sans / soft blue-slate / glassmorphism / rounded
+═══════════════════════════════════════════════════════════════ */
+.concept-clean.mode-dark {
+  --bg:        #0D1117;
+  --bg2:       #161B27;
+  --card:      #1C2236;
+  --text:      #E8EDF8;
+  --muted:     #6878A0;
+  --accent:    #4F8EF7;
+  --accent2:   #8AB4FF;
+  --accent3:   #C4A882;
+  --border:    #252D42;
+  --radius:    16px;
+  --font-hero: 'DM Sans', sans-serif;
+  --font-head: 'DM Sans', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --nav-blur:  rgba(13,17,23,0.88);
+}
+.concept-clean.mode-light {
+  --bg:        #F0EEE9;
+  --bg2:       #E4E1DA;
+  --card:      #FFFFFF;
+  --text:      #1A1C26;
+  --muted:     #7080A0;
+  --accent:    #2563EB;
+  --accent2:   #1E40AF;
+  --accent3:   #9B7A52;
+  --border:    #DDD8D0;
+  --radius:    16px;
+  --font-hero: 'DM Sans', sans-serif;
+  --font-head: 'DM Sans', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --nav-blur:  rgba(240,238,233,0.88);
+}
+
+/* ─── Global ─────────────────────────────────────────────────── */
+.theme-root {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  transition: background 0.5s ease, color 0.4s ease;
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); }
+
+/* ─── Street: noise overlay ──────────────────────────────────── */
+.street-noise::after {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 9990;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ─── Street: glitch ─────────────────────────────────────────── */
+@keyframes glitch1 { 0%,85%,100%{transform:translateX(0)} 87%{transform:translateX(-5px)} 89%{transform:translateX(5px)} 91%{transform:translateX(-2px)} }
+@keyframes glitch2 { 0%,85%,100%{transform:translateX(0)} 87%{transform:translateX(5px)} 89%{transform:translateX(-5px)} 91%{transform:translateX(2px)} }
+
+.glitch-wrap { position:relative; display:inline-block; }
+.glitch-wrap .gl1 {
+  position:absolute; inset:0; color:var(--accent2);
+  clip-path:polygon(0 20%,100% 20%,100% 45%,0 45%);
+  animation:glitch1 5s infinite;
+}
+.glitch-wrap .gl2 {
+  position:absolute; inset:0; color:var(--accent3);
+  clip-path:polygon(0 60%,100% 60%,100% 80%,0 80%);
+  animation:glitch2 5s infinite 0.3s;
+}
+
+/* ─── Premium: ruled line decoration ─────────────────────────── */
+.ruled-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+/* ─── Clean: glass card ──────────────────────────────────────── */
+.glass {
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  background: color-mix(in srgb, var(--card) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border));
+}
+
+/* ─── Clean: blob background ─────────────────────────────────── */
+.blob-bg {
+  position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+}
+.blob-bg span {
+  position: absolute; border-radius: 50%;
+  filter: blur(80px); opacity: 0.12;
+}
+
+/* ─── Marquee ─────────────────────────────────────────────────── */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-inner { display: flex; animation: marquee 22s linear infinite; width: max-content; }
+.marquee-inner:hover { animation-play-state: paused; }
+
+/* ─── Magnetic btn ────────────────────────────────────────────── */
+.magnetic { transition: transform 0.25s cubic-bezier(0.23,1,0.32,1); }
