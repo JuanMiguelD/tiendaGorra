@@ -2,14 +2,17 @@
 // Todas las fotos vienen de /fotos/. Los nombres de archivo son el color.
 // Archivos disponibles: blanco1.jpg, blanco2.jpg, "blanco y negro.jpg",
 //                       gris1.jpg, gris2.png, negro1.jpeg
+// import.meta.env.BASE_URL resuelve '/' en dev y '/tiendaGorra/' en producción.
+
+const base = import.meta.env.BASE_URL;
 
 export const FOTOS = {
-  blanco1:       '/fotos/blanco1.jpg',
-  blanco2:       '/fotos/blanco2.jpg',
-  blancoNegro:   '/fotos/blanco y negro.jpg',
-  gris1:         '/fotos/gris1.jpg',
-  gris2:         '/fotos/gris2.png',
-  negro1:        '/fotos/negro1.jpeg',
+  blanco1:       `${base}fotos/blanco1.jpg`,
+  blanco2:       `${base}fotos/blanco2.jpg`,
+  blancoNegro:   `${base}fotos/blanco y negro.jpg`,
+  gris1:         `${base}fotos/gris1.jpg`,
+  gris2:         `${base}fotos/gris2.png`,
+  negro1:        `${base}fotos/negro1.jpeg`,
 };
 
 export const productos = [
